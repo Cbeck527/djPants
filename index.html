@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+            body {
+                background-image: url('dj-pants.png');
+                background-repeat: no-repeat;
+            }
+            #days {
+                font-family: "Helvetica", sans-serif;
+                color: red;
+                font-size: 76px;
+                position: absolute;
+                top:8%;
+                left: 10%;
+                -webkit-transform: rotate(-15deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="days"><h1>69</h1></div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+        Date.dateDiff = function(datepart, fromdate, todate) {
+            datepart = datepart.toLowerCase();
+            var diff = todate - fromdate;
+            var divideBy = { w:604800000,
+                           d:86400000,
+                           h:3600000,
+                           n:60000,
+                           s:1000 };
+
+            return Math.floor( diff/divideBy[datepart]);
+        }
+
+        var theDate = new Date(2014, 0, 7);
+
+        var daysSince = Date.dateDiff("d", theDate, Date.now());
+
+        $( document ).ready(function() {
+            $( "#days h1" ).text(daysSince)
+        });
+
+        setInterval(function(){
+            location.reload();
+        },3600000);
+
+        </script>
+    </body>
+</html>
